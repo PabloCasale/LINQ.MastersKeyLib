@@ -34,8 +34,8 @@ namespace LINQ.MastersKeyLib.DeferredExecution
 
             var people = new List<Person>
             {
-                new Person(1,"Frodo"),
-                new Person(7,"Sam")
+                new Person{ Id = 1,Name = "Frodo", Kingdom = Enums.Kingdoms.TheShire, Height = 0.60},
+                new Person{ Id = 2, Name = "Sam", Kingdom = Enums.Kingdoms.TheShire, Height = 0.58}
             };
 
             var personWithIdLessThan5 = people.Where(person => person.Id < 5);
