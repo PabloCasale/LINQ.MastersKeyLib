@@ -1,4 +1,5 @@
 ﻿using LINQ.MastersKeyLib.Models;
+using LINQ.MastersKeyLib.Printer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,16 +10,20 @@ namespace LINQ.MastersKeyLib.DeferredExecution
 {
     public class DeferredExample
     {
+        public DeferredExample()
+        {
+            Print.Title(nameof(DeferredExample));
+        }
         public void Execute()
         {
-            Console.WriteLine("\nDEFERRED EXAMPLE:");
 
             var words = new List<string> { "a", "bbbb", "cc", "dddddd" };
-            Console.WriteLine("Letters: " + string.Join(", ",words));
+            Print.List(nameof(words), words);
+
             var shortWords = words.Where(word => word.Length < 3); //query does not update
             //var shortWords = words.Where(word => word.Length < 3).ToList(); //will be updated on every call
 
-            Console.WriteLine("First Iteration");
+            Print.WriteLine("First Iteration");
             foreach (var word in shortWords)
             {
                 Console.WriteLine(word);
@@ -26,7 +31,7 @@ namespace LINQ.MastersKeyLib.DeferredExecution
 
             words.Add("e");
 
-            Console.WriteLine("Second Iteration");
+            Print.WriteLine("Second Iteration");
             foreach (var word in shortWords)
             {
                 Console.WriteLine(word);
@@ -68,8 +73,8 @@ namespace LINQ.MastersKeyLib.DeferredExecution
                 Console.WriteLine(animal);
             }
 
-            Console.WriteLine("With Id < 5: " + string.Join(", ", personWithIdLessThan5));
-            Console.WriteLine("First Five persons: " + string.Join(", ", firstfivepersons));
+            Print.List(nameof(personWithIdLessThan5), personWithIdLessThan5);
+            Print.List(nameof(firstfivepersons), firstfivepersons);
 
 
         }

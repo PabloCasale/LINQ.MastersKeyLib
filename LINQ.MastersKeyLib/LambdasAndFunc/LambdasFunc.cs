@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LINQ.MastersKeyLib.Printer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,11 +14,11 @@ namespace LINQ.MastersKeyLib.LambdasAndFunc
 
         public LambdasFunc()
         {
+            Print.Title(nameof(LambdasFunc));
         }
         
         public void Execute()
         {
-            Console.WriteLine("LAMBDAS AND FUNC");
 
             //With Func and Predicate
             //bool isAnylargerThan100 = IsAny(numbers, IsLargerThan100);
@@ -39,9 +40,9 @@ namespace LINQ.MastersKeyLib.LambdasAndFunc
 
             bool isAnyUppercase = IsAny(letters, letter => letter == letter.ToUpper());
 
-            Console.WriteLine($"Is any larger than 100: {isAnyLargerThan100}");
-            Console.WriteLine($"Is any Even: {isAnyEven}");
-            Console.WriteLine($"Is any Uppercase: {isAnyUppercase}");
+            Print.Bool("Is any larger than 100: ", isAnyLargerThan100);
+            Print.Bool($"Is any Even", isAnyEven);
+            Print.Bool("Is any Uppercase", isAnyUppercase);
         }
        
 
