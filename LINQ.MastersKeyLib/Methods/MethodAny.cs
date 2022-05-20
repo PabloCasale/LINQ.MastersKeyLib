@@ -1,5 +1,6 @@
 ﻿using LINQ.MastersKeyLib.Enums;
 using LINQ.MastersKeyLib.Models;
+using LINQ.MastersKeyLib.Printer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,14 +13,16 @@ namespace LINQ.MastersKeyLib.Methods
     {
         public MethodAny()
         {
-            Console.WriteLine(Environment.NewLine + "ANY EXAMPLE");
+            Print.Title(nameof(MethodAny));
         }
         public void AnyFunction()
         {
             var numbers = new[] { 1, 5, 9, 2, 4, 0 };
+            Print.List(nameof(numbers), numbers);
+
 
             bool isAnyLargerThan5 = numbers.Any(x => x > 5);
-            Console.WriteLine(isAnyLargerThan5);
+            Print.Bool(nameof(isAnyLargerThan5), isAnyLargerThan5);
 
             var people = new[]
             {
@@ -31,11 +34,16 @@ namespace LINQ.MastersKeyLib.Methods
                 new Person(6, "Frodo", Kingdoms.TheShire, 0.50)
             };
 
+            foreach (var person in people)
+            {
+                Console.WriteLine(person);
+            }
+
             var isAnyFromIsengard = people.Any(person => person.Kingdom == Kingdoms.Isengard);
-            Console.WriteLine(nameof(isAnyFromIsengard) + ": " + isAnyFromIsengard);
+            Print.Bool(nameof(isAnyFromIsengard), isAnyFromIsengard);
 
             var isAnyFromGondorAndTall = people.Any(person => person.Kingdom == Kingdoms.Gondor && person.Height >= 1.50);
-            Console.WriteLine(nameof(isAnyFromGondorAndTall) + " " + isAnyFromGondorAndTall);
+            Print.Bool(nameof(isAnyFromGondorAndTall), isAnyFromGondorAndTall);
 
         }
     }

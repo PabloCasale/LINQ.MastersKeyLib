@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LINQ.MastersKeyLib.Printer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,7 @@ namespace LINQ.MastersKeyLib.ExtensionMethods
     {
         public Extensions()
         {
-
+            Print.Title("Extensions");
         }
 
         public void Execute()
@@ -27,8 +28,9 @@ namespace LINQ.MastersKeyLib.ExtensionMethods
                                     Nullam in arcu porta diam malesuada condimentum.";
 
 
-            Console.WriteLine(String.Join(", ", wordsLongerThan2Letters));
-            Console.WriteLine(multiLineString.GetCountOfLines());
+            Print.List(nameof(wordsLongerThan2Letters), wordsLongerThan2Letters);
+            Print.Write(nameof(multiLineString));
+            Console.WriteLine(multiLineString.GetCountOfLines().ToString());
         }
     }
 }

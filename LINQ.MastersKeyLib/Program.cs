@@ -20,3 +20,6 @@ deferredExample.Execute();
 
 MethodAny methodAny = new MethodAny();
 methodAny.AnyFunction();
+
+MethodAll methodAll = new();
+methodAll.AllFunction();
