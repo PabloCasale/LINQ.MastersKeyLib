@@ -19,15 +19,22 @@ namespace LINQ.MastersKeyLib.Printer
         public static void Write(string value)
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.Write(value + ": ");
+            Console.Write(value);
             Console.ForegroundColor = ConsoleColor.White;
         }
 
         public static void WriteLine(string value)
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine(value + ": ");
+            Console.WriteLine(value);
             Console.ForegroundColor = ConsoleColor.White;
+        }
+        public static void KeyValue(string key, object value)
+        {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.Write(key + ": ");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine(value.ToString());
         }
 
         public static void ValueInt(int value)

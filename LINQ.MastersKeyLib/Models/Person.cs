@@ -11,22 +11,12 @@ namespace LINQ.MastersKeyLib.Models
     {
 
         public int Id { get; set; }
-        public string Name { get; set; }
+        public string? Name { get; set; }
         public Kingdoms Kingdom { get; set; }
 
         public double Height { get; set; }
 
-        public Person(int id, string name, Kingdoms kingdom, double height)
-        {
-            Id = id;
-            Name = name;
-            Kingdom = kingdom;
-            Height = height;
-        }
-        public Person()
-        {
-
-        }
+        
 
         public override string ToString()
         {
