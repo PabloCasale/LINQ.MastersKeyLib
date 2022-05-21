@@ -40,3 +40,6 @@ methodOrderBy.Execute();
 
 MethodMinAndMax methodMinAndMax = new MethodMinAndMax(peopleService);
 methodMinAndMax.Execute();
+
+MethodElementAtFirstLast methodElementAtFirstLast = new MethodElementAtFirstLast(peopleService);
+methodElementAtFirstLast.Execute();

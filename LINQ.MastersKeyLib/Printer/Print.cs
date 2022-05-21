@@ -16,20 +16,20 @@ namespace LINQ.MastersKeyLib.Printer
             Console.ForegroundColor = ConsoleColor.White;
         }
 
-        public static void Write(string value)
+        public static void Write(object? value)
         {
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.Write(value);
             Console.ForegroundColor = ConsoleColor.White;
         }
 
-        public static void WriteLine(string value)
+        public static void WriteLine(object? value)
         {
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine(value);
             Console.ForegroundColor = ConsoleColor.White;
         }
-        public static void KeyValue(string key, object value)
+        public static void KeyValue(string key, object? value)
         {
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.Write(key + ": ");
@@ -37,7 +37,7 @@ namespace LINQ.MastersKeyLib.Printer
             Console.WriteLine(value.ToString());
         }
 
-        public static void ValueInt(int value)
+        public static void Number(int value)
         {
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine(value);
