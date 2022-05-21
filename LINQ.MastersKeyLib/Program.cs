@@ -34,3 +34,6 @@ methodCount.Execute();
 
 MethodContains methodContains = new MethodContains(peopleService);
 methodContains.Execute();
+
+MethodOrderBy methodOrderBy = new MethodOrderBy(peopleService);
+methodOrderBy.Execute();
