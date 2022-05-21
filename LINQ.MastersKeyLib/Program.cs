@@ -43,3 +43,6 @@ methodMinAndMax.Execute();
 
 MethodElementAtFirstLast methodElementAtFirstLast = new MethodElementAtFirstLast(peopleService);
 methodElementAtFirstLast.Execute();
+
+MethodWhere methodWhere = new MethodWhere(peopleService);
+methodWhere.Execute();
