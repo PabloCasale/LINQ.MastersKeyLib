@@ -5,6 +5,11 @@ using LINQ.MastersKeyLib.EnumerablesMethodChainings;
 using LINQ.MastersKeyLib.ExtensionMethods;
 using LINQ.MastersKeyLib.LambdasAndFunc;
 using LINQ.MastersKeyLib.Methods;
+using LINQ.MastersKeyLib.RepositoryService;
+
+
+
+var peopleService = new PeopleService();
 
 var lambdasFunc = new LambdasFunc();
 lambdasFunc.Execute();
@@ -18,8 +23,14 @@ chainings.Execute();
 DeferredExample deferredExample = new ();
 deferredExample.Execute();
 
-MethodAny methodAny = new MethodAny();
+MethodAny methodAny = new MethodAny(peopleService);
 methodAny.AnyFunction();
 
-MethodAll methodAll = new();
+MethodAll methodAll = new MethodAll(peopleService);
 methodAll.AllFunction();
+
+MethodCount methodCount = new MethodCount(peopleService);
+methodCount.Execute();
+
+MethodContains methodContains = new MethodContains(peopleService);
+methodContains.Execute();

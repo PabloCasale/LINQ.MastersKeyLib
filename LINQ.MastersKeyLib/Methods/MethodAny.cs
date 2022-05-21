@@ -1,6 +1,7 @@
 ﻿using LINQ.MastersKeyLib.Enums;
 using LINQ.MastersKeyLib.Models;
 using LINQ.MastersKeyLib.Printer;
+using LINQ.MastersKeyLib.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +12,12 @@ namespace LINQ.MastersKeyLib.Methods
 {
     public class MethodAny
     {
-        public MethodAny()
+        private readonly IPeopleService peopleService;
+
+        public MethodAny(IPeopleService peopleService)
         {
             Print.Title(nameof(MethodAny));
+            this.peopleService = peopleService;
         }
         public void AnyFunction()
         {
@@ -24,15 +28,7 @@ namespace LINQ.MastersKeyLib.Methods
             bool isAnyLargerThan5 = numbers.Any(x => x > 5);
             Print.Bool(nameof(isAnyLargerThan5), isAnyLargerThan5);
 
-            var people = new[]
-            {
-                new Person(1, "Gimli", Kingdoms.Moria,0.75),
-                new Person(2, "Aragorn", Kingdoms.Gondor, 1.88),
-                new Person(3, "Legolas", Kingdoms.Rivendel, 1.79),
-                new Person(4, "Sauron", Kingdoms.Mordor, 2.10),
-                new Person(5, "Saruman", Kingdoms.Isengard, 1.90),
-                new Person(6, "Frodo", Kingdoms.TheShire, 0.50)
-            };
+            var people = this.peopleService.GetPeople();
 
             foreach (var person in people)
             {

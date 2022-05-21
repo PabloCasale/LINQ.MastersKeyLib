@@ -9,10 +9,12 @@ namespace LINQ.MastersKeyLib.Enums
     public enum Kingdoms
     {
         Gondor,
-        TheShire,
-        Rivendel,
-        Moria,
+        Shire,
+        Rivendell,
         Mordor,
-        Isengard
+        Isengard,
+        Erebor,
+        Rohan,
+        Fangorn
     }
 }
