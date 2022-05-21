@@ -37,3 +37,6 @@ methodContains.Execute();
 
 MethodOrderBy methodOrderBy = new MethodOrderBy(peopleService);
 methodOrderBy.Execute();
+
+MethodMinAndMax methodMinAndMax = new MethodMinAndMax(peopleService);
+methodMinAndMax.Execute();

@@ -10,5 +10,6 @@ namespace LINQ.MastersKeyLib.Services
     public interface IPeopleService
     {
         List<Person> GetPeople();
+        int[] Numbers();
     }
 }
